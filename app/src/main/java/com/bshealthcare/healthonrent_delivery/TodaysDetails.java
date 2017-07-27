@@ -77,7 +77,7 @@ String oid,skuid,pname,address,type,name,phone;
 
     }
 
-    public void track(View view){
+    public void trackaddress(View view){
          Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("http://maps.google.co.in/maps?q=" + address));
         if (intent.resolveActivity(getPackageManager()) != null) {

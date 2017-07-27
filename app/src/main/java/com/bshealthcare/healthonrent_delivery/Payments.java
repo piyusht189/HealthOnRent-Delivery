@@ -109,7 +109,7 @@ public class Payments extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payments);
         sp=getSharedPreferences("auth", Context.MODE_PRIVATE);
-        did=sp.getString("did","no");
+        did=sp.getString("did","");
 
 
         qrScan = new IntentIntegrator(this);

@@ -72,6 +72,8 @@ public class RentCollection extends AppCompatActivity {
                     for(int k=0;k<arr.length();k++){
                         JSONObject obj=arr.getJSONObject(k);
                         rs[k]=obj.getString("total");
+                        Double db=Double.parseDouble(rs[k]);
+                        rs[k]=String.valueOf((int) Math.round(db));
                         invno[k]=obj.getString("invoice_no");
                         oid[k]=obj.getString("oid");
                         address[k]=obj.getString("address");

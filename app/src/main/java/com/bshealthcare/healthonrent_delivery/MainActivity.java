@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedpreferences;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         sharedpreferences = getSharedPreferences("auth", Context.MODE_PRIVATE);
         editor = sharedpreferences.edit();
+
     }
     public void warehouseout(View view){
         startActivity(new Intent(this,WareHouseOut.class));

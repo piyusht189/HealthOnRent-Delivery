@@ -1,7 +1,9 @@
 package com.bshealthcare.healthonrent_delivery;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +31,7 @@ import java.util.Map;
 
 public class WareHouseOut extends AppCompatActivity {
     ListView lv;
-
+    SharedPreferences sharedpreferences;
     String[] skuid,oid,pname;
     String fetchedstring,flag;
     RequestQueue requestQueue;
@@ -41,9 +43,13 @@ public class WareHouseOut extends AppCompatActivity {
         lv=(ListView) findViewById(R.id.lv);
         requestQueue = Volley.newRequestQueue(WareHouseOut.this);
         //intializing scan object
+        sharedpreferences = getSharedPreferences("auth", Context.MODE_PRIVATE);
         qrScan = new IntentIntegrator(this);
         qrScan.setBeepEnabled(false);
         final JSONObject params = new JSONObject();
+        try {
+            params.put("did",sharedpreferences.getString("did",""));
+        }catch (JSONException r){}
         String load_url = "http://139.59.34.12/admin/app/warehouse/fetchmyorders.php";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, load_url, params, new Response.Listener<JSONObject>() {
             @SuppressLint("SetTextI18n")

@@ -1,7 +1,9 @@
 package com.bshealthcare.healthonrent_delivery;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -26,7 +29,7 @@ import java.util.Map;
 
 public class Today extends AppCompatActivity {
     ListView lv;
-
+    SharedPreferences sharedpreferences;
     String[] skuid,oid,pname,type,address,phone,name;
     String fetchedstring,flag;
     RequestQueue requestQueue;
@@ -36,8 +39,12 @@ public class Today extends AppCompatActivity {
         setContentView(R.layout.activity_today);
         lv=(ListView) findViewById(R.id.lv);
         requestQueue = Volley.newRequestQueue(Today.this);
-
+        sharedpreferences = getSharedPreferences("auth", Context.MODE_PRIVATE);
         final JSONObject params = new JSONObject();
+        try{
+            params.put("did",sharedpreferences.getString("did",""));
+        }catch (JSONException e){
+        }
         String load_url = "http://139.59.34.12/admin/app/warehouse/fetchmyordersapproved.php";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, load_url, params, new Response.Listener<JSONObject>() {
             @SuppressLint("SetTextI18n")

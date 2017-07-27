@@ -46,9 +46,10 @@ TextView oidt,due,type,name,address,phone,rs,invno;
         rss=g.getStringExtra("rs");
          address.setText(g.getStringExtra("address"));
          phone.setText(g.getStringExtra("phone"));
-        int a=Integer.parseInt(g.getStringExtra("rs"));
-        int b=Integer.parseInt(g.getStringExtra("due"));
-        int c=a-b;
+        double a=Double.parseDouble(g.getStringExtra("rs"));
+        double b=Double.parseDouble(g.getStringExtra("due"));
+        int c = (int) Math.round(a-b);
+
          rs.setText("Rs. "+String.valueOf(c));
         due.setText("Rs."+g.getStringExtra("due"));
          invno.setText(g.getStringExtra("invno"));

@@ -96,14 +96,14 @@
                 android:textColor="@color/cardview_light_background" />
 
             <Button
-                android:id="@+id/track"
+                android:id="@+id/trackme"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#451f28"
                 android:gravity="center"
                 android:text="TRACk"
-                android:onClick="track"
+                android:onClick="trackaddress"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="18sp" />
         </LinearLayout>
