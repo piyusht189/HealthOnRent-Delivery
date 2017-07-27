@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bshealthcare.healthonrent_delivery.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:id="@+id/de">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:background="@color/zxing_custom_viewfinder_laser"
+        android:gravity="center"
+        android:text="Delivery Management"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:text="Log Out"
+        android:textColor="#fff"
+        android:onClick="logout"
+        android:background="#4e1c4e"/>
+</LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/de"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <Button
+            android:id="@+id/today"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="#fc366e57"
+            android:elevation="0dp"
+            android:onClick="today"
+            android:text="Today"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/warehouseout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="#fcb4914d"
+            android:elevation="0dp"
+            android:onClick="warehouseout"
+            android:text="Warehouse Out"
+
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/first"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/rentcollection"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:background="#fc36676e"
+            android:elevation="0dp"
+            android:onClick="rentcollection"
+            android:text="Rent Collection"
+            android:textSize="14sp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/second"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+</RelativeLayout>

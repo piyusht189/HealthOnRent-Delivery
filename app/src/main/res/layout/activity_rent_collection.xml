@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bshealthcare.healthonrent_delivery.RentCollection">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/zxing_custom_viewfinder_laser"
+        android:gravity="center"
+        android:text="Rent Collections"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView"
+            android:paddingTop="20dp"
+            android:id="@+id/lv"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="20.0sp">
+        </ListView>
+
+</RelativeLayout>
